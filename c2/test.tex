@@ -17,12 +17,6 @@
 \subsection{}
 
 \section{Chapter 2.2 -- Separable Equations} 
-When integrating both sides you don't need to write +C on both sides of the '=' sign since
-you could simply subtract one of them from both sides and then 
-there will only be one constant and since we do not know it's
-value it doesn't matter that we represent as \( C_1-C_2 \)
-or anything of the like since the result can be expressed
-as another constant \( C \).
 
 \subsection{2.2.1}
     \begin{align*}
@@ -334,9 +328,10 @@ C &= 0 \Downarrow \\
     y &= \sin x +C\cos x
 \end{align*}
 
+\newpage
 \subsection{2.3.37}
 \[
-    x \in [0,3]
+    (0 \ge x \ge 3)
 \]
 \begin{align*}
     \frac{\mathrm{d}y}{\mathrm{d}x}+2y &= 1\\
@@ -351,15 +346,59 @@ C &= 0 \Downarrow \\
     C &= -\frac{1}{2}\\
     y &= -\frac{e^{-2x}}{2}+\frac{1}{2}
 \end{align*}
+\[
+    (x > 3)
+\]
+\begin{align*}
+    C_2e^{-6} &= -\frac{e^{-6}}{2}+\frac{1}{2}\\
+    C_2 &= -\frac{1}{2}+\frac{e^{6}}{2}\\
+    y &= e^{-2x}(\frac{e^{6}}{2}-\frac{1}{2})\\
+    y &= \frac{e^{-2x}}{2}\left(e^{6}-1\right)
+\end{align*}
+
+Answer:
+\[
+    y= \begin{cases} \frac{1}{2}-\frac{e^{-2x}}{2}, & 0 \le x \le 3 \\ \frac{e^{-2x}}{2}\left(e^{6}-1\right), & x > 3  \\ \end{cases}
+\]
 
 
+\newpage
 \subsection{2.3.39}
+\[
+    (0 \le x < 1)
+\]
+    
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x}+2xy &= x\\
+    P &= 2x\\
+    e^{\int 2x \; \mathrm{d}x} &= e^{x^2}\\
+    \frac{\mathrm{d}}{\mathrm{d}x}[e^{x^2}y] &= e^{x^2}x\\
+    e^{x^2}y &= \int e^{x^2}x \; \mathrm{d}x\\
+    u = x^2 \qquad \mathrm{d}u &= 2x\mathrm{d}x \Rightarrow \frac{\mathrm{d}u}{2x} = \mathrm{d}x\\
+    e^{x^2}y &= \int\frac{e^{u}}{2} \; \mathrm{d}u\\
+    e^{x^2}y &= \frac{e^{u}}{2}+C \\
+    e^{x^2}y &= \frac{e^{x^2}}{2}+C \\
+    y &= \frac{e^{x^2}}{2e^{x^2}}+\frac{C}{e^{x^2}}\\
+    y &= \frac{1}{2}+Ce^{-x^2}\\
+    (y(0) &= 2)\\
+    2 &= \frac{1}{2}+Ce^{-0^2}\\
+    2-\frac{1}{2} &= C\\
+    C &= \frac{3}{2}\\
+    y &= \frac{1}{2}+\frac{3e^{-x^2}}{2}
+\end{align*}
+    \[
+        x \ge 1
+    \]
+\begin{align*}
+    C_2e^{-1^2}  = \frac{1}{2}+\frac{3e^{-1^2}}{2} &\Rightarrow C_2  = \frac{e}{2}+\frac{3}{2}\\
+    y &= \left(\frac{e}{2}+\frac{3}{2}\right)e^{-x^2}
+\end{align*}
 
-\subsection{2.3.50}
-
-\subsection{2.3.57}
-
-
+Answer:
+\[
+    y= \begin{cases} \frac{1}{2}+\frac{3e^{-x^2}}{2}, & 0 \ge x < 1 \\ e^{-x^2}\left(\frac{e}{2}+\frac{3}{2}\right), & x \ge 1  \\ \end{cases}
+\]
+    
 
 
 \end{document}
