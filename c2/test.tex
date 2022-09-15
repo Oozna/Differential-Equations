@@ -1,0 +1,366 @@
+\documentclass{article}
+\usepackage{amssymb, amsmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin=1in]{geometry}
+
+\setcounter{secnumdepth}{0}
+
+\title{Chapter 2 -- First Order Differential Equations}
+\author{Eric Johansson}
+
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Chapter 2.1 -- Solution Curves Without a solution} 
+\subsection{}
+
+\section{Chapter 2.2 -- Separable Equations} 
+When integrating both sides you don't need to write +C on both sides of the '=' sign since
+you could simply subtract one of them from both sides and then 
+there will only be one constant and since we do not know it's
+value it doesn't matter that we represent as \( C_1-C_2 \)
+or anything of the like since the result can be expressed
+as another constant \( C \).
+
+\subsection{2.2.1}
+    \begin{align*}
+        \frac{\mathrm{d}y}{\mathrm{d}x} &= \sin 5x \\
+        \mathrm{d}y &= \sin 5x \mathrm{d}x \\
+        \int 1 \; \mathrm{d}y  &= \int \sin 5x \; \mathrm{d}x \\
+        y+C_1  &= -\frac{ \cos 5x}{5} + C_2 \\
+        y &= -\frac{\cos 5x}{5}+C \\
+    \end{align*}
+
+\subsection{2.2.2}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= \left(x+1\right)^2 \\
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= x^2+2x+1 \\
+    \mathrm{d}y &= (x^2+2x+1) \mathrm{d}x \\
+    \int 1 \dif y  &= \int x^2+2x+1 \dif x \\
+    y+C_1  &=  \frac{x^3}{3}+x^2+x+C_2 \\
+    y &= \frac{x^3}{3}+x^2+x+C
+\end{align*}
+
+\subsection{2.2.3}
+\begin{align*}
+    \mathrm{d}x-e^{3x}\mathrm{d}y &= 0 \\
+    \mathrm{d}x &= e^{3x}\mathrm{d}y \\
+    \frac{\mathrm{d}x}{e^{3x}} &= \mathrm{d}y \\
+    \int \frac{1}{e^{3x}} \; \mathrm{d}x &= \int 1 \; \mathrm{d}y \\
+    y+C_1 &= -\frac{1}{3e^{3x}}+C_2 \\
+    y  &=  -\frac{1}{3e^{3x}}+C
+\end{align*}
+
+\newpage
+\subsection{2.2.4}
+\begin{align*}
+    \mathrm{d}y-\left(y-1\right)^2 \mathrm{d}x &= 0 \\
+    \mathrm{d}y &= \left(y-1\right)^2\mathrm{d}x \\
+    \frac{\mathrm{d}y}{\left(y-1\right)^2} &= \mathrm{d}x \\
+    \int \frac{1}{\left(y-1\right)^2} \; \mathrm{d}y &= \int 1 \; \mathrm{d}x \\
+    \frac{-1}{y-1} +C_1 &= x+ C_2 \\
+    y &=1- \frac{1}{x+C}
+\end{align*}
+
+\subsection{2.2.5}
+\begin{align*}
+    x \frac{\mathrm{d}y}{\mathrm{d}x} &= 4y \\
+    x\mathrm{d}y &= 4y\mathrm{d}x \\
+    \frac{1}{4y}\mathrm{d}y &= \frac{1}{x}\mathrm{d}x \\
+    \frac{1}{4}\int \frac{1}{y} \; \mathrm{d}y &= \int \frac{1}{x} \; \mathrm{d}x \\
+    \frac{\ln |y| }{4} +C_1 &= \ln |x| + C_2 \\
+    \ln |y|  &=  4\ln|x| +C \\
+    e^{\ln |y|} &= e^{4\ln|x|+C} \\
+    y  &= e^{C}x^{4} = Cx^4 
+\end{align*}
+
+\subsection{2.2.6}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x}+2xy^2 &= 0 \\
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= -2xy^2 \\
+    \frac{1}{y^2}\mathrm{d}y &= -2x\mathrm{d}x \\
+    \int \frac{1}{y^2} \; \mathrm{d}y &=-2 \int x \; \mathrm{d}x \\
+    -\frac{1}{y}+C_1 &= -x^2+C_2 \\
+    y  &=  \frac{1}{x^2+C}
+\end{align*}
+
+\newpage
+\subsection{2.2.7}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= e^{3x+2y} \\
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= e^{3x}e^{2y}\\
+    \frac{1}{e^{2y}}\mathrm{d}y &= e^{3x}\mathrm{d}x\\
+    \int \frac{1}{e^{2y}} \; \mathrm{d}y &= \int e^{3x} \; \mathrm{d}x \\
+     -\frac{1}{2e^{2y}}+C_1 &= \frac{e^{3x}}{3}+C_2 \\
+    -\frac{1}{e^{2y}} &= \frac{2e^{3x}}{3}+C \\
+    e^{-2y} &= - \frac{2e^{3x}}{3}+C \\
+    -2y &= \ln (\frac{2e^{3x}}{3}+C) \\
+    y &= -\frac{\ln (\frac{2e^{3x}}{3}+C)}{2}\\
+\end{align*}
+
+\subsection{2.2.8}
+\begin{align*}
+    e^{x}y\frac{\mathrm{d}y}{\mathrm{d}x} &= e^{-y}+e^{-2x-y} \\
+    e^{x}y\frac{\mathrm{d}y}{\mathrm{d}x} &= e^{-y}+e^{-2x}e^{-y}\\
+    e^{x}y\frac{\mathrm{d}y}{\mathrm{d}x} &= e^{-y}\left(1+e^{-2x}\right)\\
+    \frac{y}{e^{-y}}\mathrm{d}y &= \frac{1+e^{-2x}}{e^{x}}\mathrm{d}x \\
+    \int \frac{y}{e^{-y}} \; \mathrm{d}y &= \int \frac{1}{e^{x}}+\frac{e^{-2x}}{e^{x}} \; \mathrm{d}x  \\
+    \int ye^{y} \;\mathrm{d}y &= \int \frac{1}{e^{x}}+e^{-3x}\; \mathrm{d}x  \\
+    e^{y}(y-1) &= -e^{-x}-\frac{e^{-3x}}{3}+C
+\end{align*}
+
+\newpage
+\subsection{2.2.9}
+\begin{align*}
+    y\ln x \frac{\mathrm{d}x}{\mathrm{d}y} &= \left(\frac{y+1}{x}\right)^2 \\
+    y\ln x \frac{\mathrm{d}x}{\mathrm{d}y} &= \frac{\left(y+1\right)^2}{x^2}\\
+    x^2 \ln x \mathrm{d}x  &=  \frac{(y+1)^2}{y}\mathrm{d}y \\
+    x^2 \ln x \mathrm{d}x  &=  \frac{y^2+2y+1}{y}\mathrm{d}y \\
+    x^2 \ln x \mathrm{d}x  &=  y+2+\frac{1}{y}\mathrm{d}y \\
+    \int x^2 \ln x \; \mathrm{d}x  &= \int y+2+\frac{1}{y} \; \mathrm{d}y \\
+    u  = \ln x \quad & \quad \mathrm{d}v = x^2 \\
+    \mathrm{d}u = \frac{1}{x} \quad & \quad v  = \frac{x^3}{3} \\ 
+   \frac{x^3}{3}\ln x-\frac{1}{3} \int x^2  \; \mathrm{d}x  &= \int y+2+\frac{1}{y} \; \mathrm{d}y \\
+   \frac{x^3}{3}\ln x-\frac{1}{3} \cdot \frac{x^3}{3} +C_1 &= \frac{y^2}{2}+2y+\ln|y| +C_2 \\
+   \frac{x^3}{3}\left(\ln x-\frac{1}{3}\right)+C  &= \frac{y^2}{2}+2y+\ln |y|
+\end{align*}
+
+\subsection{2.2.10}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= \left(\frac{2y+3}{4x+5}\right)^2 \\
+    \frac{1}{(2y+3)^2}\mathrm{d}y &= \frac{1}{(4x+5)^2}\mathrm{d}x \\
+    \int \frac{1}{(2y+3)^2} \; \mathrm{d}y &= \int \frac{1}{(4x+5)^2} \; \mathrm{d}x\\
+    -\frac{1}{2(2y+3)}+C_1 &= -\frac{1}{4(4x+5)} +C_2\\
+    \frac{1}{(2y+3)} &= \frac{1}{2(4x+5)} +C
+\end{align*}
+
+\subsection{2.2.11}
+\begin{align*}
+    \csc y \mathrm{d}x+\sec^2x\mathrm{d}y &= 0\\
+    \sec^2x\mathrm{d}y &= -\csc y \mathrm{d}x\\
+    -\frac{1}{\csc y}\mathrm{d}y  &= \frac{1}{\sec^2x}\mathrm{d}x\\
+    -\sin y \mathrm{d}y &= \cos ^2x\mathrm{d}x\\
+    \int -\sin y \; \mathrm{d}y &= \int \cos ^2x \; \mathrm{d}x\\
+    \cos y &= \frac{x}{2}+\frac{\sin 2x}{4}+C\\
+     y &= \arccos\left( \frac{x}{2}+\frac{\sin 2x}{4}+C\right)
+\end{align*}
+
+\subsection{2.2.12}
+
+\subsection{2.2.13}
+
+\subsection{2.2.14}
+
+\subsection{2.2.15}
+
+\subsection{2.2.16}
+\begin{align*}
+    \frac{\mathrm{d}Q}{\mathrm{d}t} &= k(Q-70) \\
+    \frac{\mathrm{d}Q}{k(Q-70)} &= \mathrm{d}t \\
+    \frac{1}{k}\int \frac{1}{Q-70} \; \mathrm{d}Q &= \int 1 \; \mathrm{d}t\\
+    \frac{1}{k}\ln|Q-70|  &=  t+C \\
+    \ln|Q-70| &= k(t+C)\\
+    e^{\ln|Q-70| }  &= e^{kt+kC}\\
+    Q-70  &= Ce^{kt}\\
+    Q &= Ce^{kt}+70 
+\end{align*}
+
+\subsection{2.2.17}
+\begin{align*}
+    \frac{\mathrm{d}P}{\mathrm{d}t} &= P-P^2 \\
+    \frac{1}{P(1-P)}\mathrm{d}P &= \mathrm{d}t \\
+    \int \frac{1}{P(1-P)} \; \mathrm{d}P &= \int 1 \; \mathrm{d}t   \\
+    \int \frac{1}{P}-\frac{1}{1-P} \; \mathrm{d}P &= \int 1 \; \mathrm{d}t \\
+    \ln |P| - \ln |1-P| + C_1  &=  t +C_2 \\
+    e^{\ln|\frac{P}{1-P}| } &= e^{t+C} \\
+    \frac{P}{1-P} &= Ce^{t}\\
+    P &= Ce^{t}(1-P) \\
+    P &= Ce^{t}-Ce^{t}P \\
+    P+Ce^{t}P &= Ce^{t}\\
+    P(1+Ce^{t}) &= Ce^{t} \\
+    P &= \frac{Ce^{t}}{1+Ce^{t}}
+\end{align*}
+
+\subsection{2.2.18} \
+\begin{align*}
+    \frac{\mathrm{d}N}{\mathrm{d}t}+N &= Nte^{t+2} \\
+    \frac{\mathrm{d}N}{\mathrm{d}t} &= Nte^{t+2} -N\\
+    \frac{\mathrm{d}N}{\mathrm{d}t} &= N(te^{t+2}-1)\\
+    \frac{1}{N}\mathrm{d}N &= \left(te^{t+2}-1\right)\mathrm{d}t\\
+    \int \frac{1}{N} \; \mathrm{d}N &= e^{2}\int te^{t} \; \mathrm{d}t-\int 1 \; \mathrm{d}t \\
+    \int \frac{1}{N} \; \mathrm{d}N &= e^{2}\left(te^{t}-\int e^{t} \; \mathrm{d}t\right)-\int 1 \; \mathrm{d}t \\
+   \ln |N| &= e^{2}\left(te^{t}- e^{t}\right)-t +C\\
+   e^{\ln |N|}  &= e^{e^{2}\left(te^{t}- e^{t}\right)-t +C} \\
+   e^{\ln |N|}  &= e^{e^{2}\left(te^{t}- e^{t}\right)-t }e^{C}\\
+   N  &= Ce^{e^{2}\left(te^{t}- e^{t}\right)-t }\\
+\end{align*}    
+
+\subsection{2.2.19}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{xy+3x-y-3}{xy-2x+4y-8}\\
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{(x-1)(y+3)}{(x+4)(y-2)}\\
+    \frac{y-2}{y+3}\mathrm{d}y &= \frac{x-1}{x+4}\mathrm{d}x\\
+    \int\frac{y-2}{y+3}  \; \mathrm{d}y &= \int\frac{x-1}{x+4}  \; \mathrm{d}x\\
+    \int \frac{y-3}{y-3}-\frac{5}{y-3} \; \mathrm{d}y &= \int \frac{x+4}{x+4}-\frac{5}{x+4} \; \mathrm{d}x\\
+    \int 1-\frac{5}{y-3} \; \mathrm{d}y &= \int 1-\frac{5}{x+4} \; \mathrm{d}x\\
+    y-5\ln|y-3| &= x-5\ln|x+4|+C\\
+\end{align*}
+
+\subsection{2.2.20}
+\subsection{2.2.24}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{y^2-1}{x^2-1}\\
+    \frac{1}{y^2-1}\mathrm{d}y &= \frac{1}{x^2-1}\mathrm{d}x\\
+    \frac{1}{(y-1)(y+1)}\mathrm{d}y &= \frac{1}{(x-1)(x+1)}\mathrm{d}x\\
+\end{align*}
+\[
+    \frac{1}{(y-1)(y+1)} = \frac{A}{y-1}+\frac{B}{y+1} = \frac{Ay+A+By-B}{(y-1)(y+1)} \Rightarrow  \begin{cases}A+B=0 \\ A-B=1 \end{cases} \Rightarrow \begin{cases}A=\frac{1}{2} \\ B=-\frac{1}{2} \end{cases}
+\]
+\begin{align*}
+    \frac{1}{(y-1)(y+1)}\mathrm{d}y &= \frac{1}{(x-1)(x+1)}\mathrm{d}x\\
+    \int \frac{1}{2(y-1)}-\frac{1}{2(y+1)} \; \mathrm{d}y &= \int \frac{1}{2(x-1)}-\frac{1}{2(x+1)} \; \mathrm{d}x \\
+    \frac{1}{2}\int \frac{1}{(y-1)}-\frac{1}{(y+1)} \; \mathrm{d}y &=\frac{1}{2} \int \frac{1}{(x-1)}-\frac{1}{(x+1)} \; \mathrm{d}x \\
+    \int \frac{1}{(y-1)}-\frac{1}{(y+1)} \; \mathrm{d}y &=\int \frac{1}{(x-1)}-\frac{1}{(x+1)} \; \mathrm{d}x \\
+    \ln |y-1| - \ln |y+1|  &=  \ln |x-1| - \ln |x+1| +C
+\end{align*}
+\begin{align*}
+    y(2) =2 &\Rightarrow y=2 \quad x  = 2  \\
+\ln |2-1| - \ln |2+1|  &=  \ln |2-1| - \ln |2+1| +C \\
+C &= 0 \Downarrow \\
+    \ln |y-1| - \ln |y+1|  &=  \ln |x-1| - \ln |x+1| \\
+   e^{ \ln \left|\frac{y-1}{y+1}\right|}&= e^{ \ln \left|\frac{x-1}{x+1}\right|} \\
+\frac{y-1}{y+1} &= \frac{x-1}{x+1}
+\end{align*}
+
+\subsection{2.2.25}
+\begin{align*}
+    x^2 \frac{\mathrm{d}y}{\mathrm{d}x} &= y-xy \\
+    x^2 \frac{\mathrm{d}y}{\mathrm{d}x} &= y(1-x)\\
+    \frac{1}{y}\mathrm{d}y &= \frac{1-x}{x^2}\mathrm{d}x\\
+    \int \frac{1}{y} \; \mathrm{d}y &= \int \frac{1}{x^2}-\frac{1}{x} \; \mathrm{d}x\\  
+    \ln\left|y\right| &= -\frac{1}{x}-\ln\left|x\right|+C\\
+    e^{\ln\left|y\right|} &= e^{-\frac{1}{x}-\ln\left|x\right|+C}\\
+    y &= e^{-\frac{1}{x}}e^{-\ln\left|x\right|}e^{C}\\
+    y &= Cx^{-1}e^{-\frac{1}{x}}\\
+    y(-1) = -1 &\Rightarrow y  = -1 \quad x = -1\\
+    -1 &= C(-1)^{-1}e^{-\frac{1}{-1}}\\
+    -1 &= \frac{C}{-1}e \\
+    C &= \frac{1}{e}\\
+    y &= \frac{e^{-\frac{1}{x}}}{ex}
+\end{align*}
+
+\subsection{2.2.45}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{1}{1+\sin x} \\
+    \mathrm{d}y &= \frac{1}{1+\sin x} \mathrm{d}x\\
+    \int 1 \; \mathrm{d}y &= \int \frac{1}{1+\sin x} \; \mathrm{d}x \\
+    \int 1 \; \mathrm{d}y &= \int \frac{1}{1+\sin x}\cdot \frac{1-\sin x}{1-\sin x} \; \mathrm{d}x \\
+    \int 1 \; \mathrm{d}y &= \int \frac{1-\sin x}{1-\sin ^2x} \; \mathrm{d}x \\
+    \int 1 \; \mathrm{d}y &= \int \frac{1}{\cos ^2x}-\frac{\sin x}{\cos ^2x} \; \mathrm{d}x\\
+    \int 1 \; \mathrm{d}y &= \int \sec ^2x \mathrm{d}x +\int \frac{-\sin x}{(\cos x)^2} \; \mathrm{d}x \quad (u=\cos x \quad \mathrm{d}u = -\sin x  )\\
+    \int 1 \; \mathrm{d}y &= \sec^2x+\int \frac{1}{u^2} \; \mathrm{d}u \\
+    y &= \tan x-\frac{1}{u} +C\\
+    y &= \tan x-\frac{1}{\cos x}+C\\
+    y &= \tan x-\sec x + C
+\end{align*}
+
+\section{Chapter 2.3 -- Linear equations}
+
+\subsection{2.3.2}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x} +2y&= 0\\
+    P &= 2\\
+    e^{\int 2 \; \mathrm{d}x} &= e^{2x}\\
+    e^{2x}\frac{\mathrm{d}x}{\mathrm{d}x}+e^{2x}y &= 0\cdot e^{2x}\\
+    \frac{\mathrm{d}}{\mathrm{d}x}[e^{2x}y] &= 0\\
+    e^{2x}y &= C\\
+    y &= Ce^{-2x}
+\end{align*}
+
+\subsection{2.3.3}
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x}+y &= e^{3x}\\
+    P &= 1\\
+    e^{\int 1 \; \mathrm{d}x}  &= e^{x}\\
+    e^{x}\frac{\mathrm{d}y}{\mathrm{d}x}+e^{x}y &= e^{2x}\\
+    \frac{\mathrm{d}}{\mathrm{d}x}\left[e^{x}y\right] &= e^{2x}\\
+    e^{x}y &= \frac{e^{2x}}{2}+C\\
+    y &= \frac{e^{2x}}{2e^{x}}+\frac{C}{e^{x}}\\
+    y &= \frac{e^{x}}{2}+Ce^{-x}
+\end{align*}
+
+\subsection{2.3.5}
+\begin{align*}
+    y'+3x^2y &= x^2 \\
+    P &= 3x^2\\
+    e^{\int 3x^2 \; \mathrm{d}x} &= e^{x^3} \\
+    \frac{\mathrm{d}}{\mathrm{d}x}\left[e^{x^3}y\right] &= x^2e^{x^3}  \\
+    e^{x^3}y &= \int x^2e^{x^3} \; \mathrm{d}x\\
+    u = x^3,\quad  \mathrm{d}u &= 3x^2\mathrm{d}x \Rightarrow \mathrm{d}x =\frac{\mathrm{d}u}{3x^2}  \\
+    e^{x^3}y &= \int \frac{e^{u}}{3} \; \mathrm{d}u\\
+    e^{x^3}y &= \frac{e^{x^3}}{3}+C\\
+    y &= \frac{e^{x^3}}{3e^{x^3}}+\frac{C}{e^{x^3}}\\
+    y &= \frac{1}{3}+Ce^{-x^3}
+\end{align*}
+
+\subsection{2.3.8}
+\begin{align*}
+    y' &= 2y+x^2+5\\
+    y'-2y &= x^2+5\\
+    P &= -2\\
+    e^{\int -2 \; \mathrm{d}x} &= e^{-2x}\\
+    \frac{\mathrm{d}}{\mathrm{d}x}\left[e^{-2x}y\right] &= e^{-2x}(x^2+5)\\
+    e^{-2x}y &= \int x^2e^{-2x} \; \mathrm{d}x+5 \int e^{-2x} \; \mathrm{d}x\\
+    e^{-2x}y &= -\frac{x^2e^{-2x}}{2}-\int xe^{-2x} \; \mathrm{d}x-\frac{5e^{-2x}}{2}\\
+    e^{-2x}y &= -\frac{x^2e^{-2x}}{2}-(-\frac{xe^{-2x}}{2}-\int e^{-2x} \; \mathrm{d}x)-\frac{5e^{-2x}}{2}\\
+    e^{-2x}y &= -\frac{x^2e^{-2x}}{2}-(-\frac{xe^{-2x}}{2}+\frac{e^{-2x}}{2})-\frac{5e^{-2x}}{2}\\
+    e^{-2x}y &= -\frac{x^2e^{-2x}}{2}+\frac{xe^{-2x}}{2}-\frac{e^{-2x}}{2}-\frac{5e^{-2x}}{2}\\
+    e^{-2x}y &= -\frac{5e^{-2x}}{2}-\frac{e^{-2x}}{2}\\
+\end{align*}
+
+\subsection{2.3.17}
+\begin{align*}
+    \cos x \frac{\mathrm{d}y}{\mathrm{d}x}+(\sin x)y &= 1\\
+    \frac{\mathrm{d}y}{\mathrm{d}x}+(\tan x)y &= \frac{1}{\cos x}\\
+    P &= \tan x \\
+    e^{\int \tan x \; \mathrm{d}x} &= e^{\ln\left|\sec x\right|} =\sec x \\
+    \frac{\mathrm{d}}{\mathrm{d}x}\left[(\sec x)y\right] &= \frac{\sec x}{\cos x}\\
+    \frac{\mathrm{d}}{\mathrm{d}x}\left[(\sec x)y\right] &= \sec ^2x\\
+    (\sec x)y &= \tan x+C\\
+    y &= \frac{\tan x}{\sec x}+\frac{C}{\sec x}\\
+    y &= \frac{\sin x}{\cos x}\cos x+C\cos x\\
+    y &= \sin x +C\cos x
+\end{align*}
+
+\subsection{2.3.37}
+\[
+    x \in [0,3]
+\]
+\begin{align*}
+    \frac{\mathrm{d}y}{\mathrm{d}x}+2y &= 1\\
+    P &= 2\\
+    e^{\int 2 \; \mathrm{d}x} &= e^{2x}\\
+    \frac{\mathrm{d}y}{\mathrm{d}x}[e^{2x}y] &= e^{2x}\\
+    e^{2x}y &= \frac{e^{2x}}{2}+C\\
+    y &= 1/2+\frac{C}{e^{2x}}\\
+    y &= Ce^{-2x}+\frac{1}{2}\\ 
+    0 &= Ce^{0}+\frac{1}{2}\\
+    0 &= C+\frac{1}{2}\\
+    C &= -\frac{1}{2}\\
+    y &= -\frac{e^{-2x}}{2}+\frac{1}{2}
+\end{align*}
+
+
+\subsection{2.3.39}
+
+\subsection{2.3.50}
+
+\subsection{2.3.57}
+
+
+
+
+\end{document}
+
