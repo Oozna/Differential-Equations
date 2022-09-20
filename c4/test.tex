@@ -5,7 +5,7 @@
 
 \setcounter{secnumdepth}{0}
 
-\title{Chapter 2 -- Higher-Order Differential Equations}
+\title{Chapter 4 -- Higher-Order Differential Equations}
 \author{Eric Johansson}
 
 \newcommand*\dif{\mathop{}\!\mathrm{d}}
@@ -18,14 +18,96 @@
 
 
 \subsection{4.1.7}
+\begin{align*}
+    x(t) &= x_0\cos (\omega t)+\frac{x_1}{\omega}\sin (\omega t)\\
+    x'(t) &= -x_0 \omega\sin(\omega t)+x_1\cos  (\omega t)\\\\
+    x(0)  = x_0 \Rightarrow   x_0   &= x_0\cos (0)+\frac{x_1}{\omega}\sin (0) = x_0\cdot 1+\frac{x_1}{\omega}\cdot 0 = x_0\\
+    x'(0)  = x_1 \Rightarrow x_1 &= x_1\cos (0)-x_0\omega\sin (0) = x_1 \cdot 1 - x_0\omega\cdot 0   = x_1
+\end{align*}
+
 \subsection{4.1.10}
+\begin{align*}
+    y''+(\tan x)y &= e^{x}\\
+    \frac{y''}{\tan x}+y &= \frac{e^{x}}{\tan x} \\
+    \text{For the equation to have a solution the}& \text{ coefficient of \(y''\) needs to not be 0 on the interval}\\
+    \text{The interval around 0 where } &\frac{1}{\tan x}\neq 0\text{ is } \left(-\frac{\pi}{2},\frac{\pi}{2}\right)
+\end{align*}
+
 \subsection{4.1.13}
+\begin{align*}
+    y &= c_1e^{x}\cos x+c_2e^{x}\sin x\\
+    y' &= c_1e^{x}\cos x-c_1e^{x}\sin x+c_2e^{x}\sin x+c_2e^{x}\cos x\\
+\end{align*}
+(a)
+\begin{align*}
+    y(0) &= 1 \Rightarrow c_1e^{0}\cos 0+c_2e^{0}\sin 0  = 1 \Rightarrow c_1  = 1\\
+    y'(\pi) &= 0 \Rightarrow e^{\pi}\cos (\pi)-e^{\pi}\sin \pi + c_2e^{\pi}\sin (\pi)+c_2e^{\pi}\cos \pi  = -e^{\pi}-c_2e^{\pi} = 0 \Rightarrow c_2 = -1\\\\
+    y &= e^{x}\cos x-e^{x}\sin x
+\end{align*}
+(b)
+\begin{align*}
+    y(0) &= 1 \Rightarrow c_1e^{0}\cos 0+c_2e^{0}\sin 0  = 1 \Rightarrow c_1  = 1\\
+    y(\pi)  &= -1 \Rightarrow e^{\pi}\cos \pi +c_2e^{\pi}\sin \pi  = -e^{\pi} \neq -1\\\\
+    \text{No solution}
+\end{align*}
+(c)
+\begin{align*}
+    y(0) &= 1 \Rightarrow c_1e^{0}\cos 0+c_2e^{0}\sin 0  = 1 \Rightarrow c_1  = 1\\
+    y\left(\frac{\pi}{2}\right)  &= 1 \Rightarrow e^{\frac{\pi}{2}}\cos \frac{\pi}{2} +c_2e^{\frac{\pi}{2}}\sin \frac{\pi}{2} = c_2e^{\frac{\pi}{2}} = 1 \Rightarrow c_2 = e^{-\frac{\pi}{2}}\\\\
+    y &= e^{x}\cos x-e^{-\frac{\pi}{2}}e^{x}\sin x
+\end{align*}
+(d)
+\begin{align*}
+    y(0) &= 0 \Rightarrow c_1e^{0}\cos 0+c_2e^{0}\sin 0  = 0 \Rightarrow c_1  = 0\\
+    y(\pi)  &= 0 \Rightarrow  +c_2e^{\pi}\sin \pi  = 0 \Rightarrow c_2 \in \mathbb{R} \\\\
+    y &= c_2e^{x}\sin x
+\end{align*}
+
 \subsection{4.1.17}
+\begin{align*}
+    \frac{1}{5}f_1(x)-f_2(x) &= 1-\cos ^2x = \sin ^2x = f_3(x)
+\end{align*}
+
 \subsection{4.1.18}
+\begin{align*}
+    2f_3(x)-f_2(x) &= 2\cos ^2x-1 = 2\cos ^2x-\cos ^2x-\sin ^2x = \cos ^2x-\sin ^2x = \cos 2x
+\end{align*}
+
+\subsection{4.1.19}
+\begin{align*}
+    4f_1(x)-3f_2(x) &= 4x-3(x-1)  = 4x-3x+3 = x+3 = f_3(x)
+\end{align*}
+
 \subsection{4.1.20}
+Independent
+
+\subsection{4.1.21}
+Independent, can't create \( x^2 \)
+
 \subsection{4.1.23}
+Both functions satisfy the differential equation.
+\[
+    W(e^{-3x},e^{4x})= \begin{pmatrix} e^{-3x}&e^{4x}\\-3e^{-3x} & 4e^{4x}\end{pmatrix}=7e^{x}\neq0 
+\]
+
+\subsection{4.1.25}
+Both functions satisfy the differential equation.
+\[
+    W(e^{x}\cos 2x,e^{x}\sin 2x)=\begin{pmatrix}e^{x}\cos 2x & e^{x}\sin 2x \\ e^{x}\cos 2x-2e^{x}\sin 2x & e^{x}\sin 2x+2e^{x}\cos 2x \end{pmatrix} \quad x=0 \Rightarrow \begin{pmatrix}1 & 0 \\ 1 & 2\end{pmatrix} =2 \neq 0
+\]
+
 \subsection{4.1.26}
+Both functions satisfy the differential equation.
+\[
+    W(e^{\frac{x}{2}},xe^{\frac{x}{2}})=\begin{pmatrix} e^{\frac{x}{2}} & xe^{\frac{x}{2}}\\ \frac{e^{\frac{x}{2}}}{2} & e^{\frac{x}{2}}+\frac{xe^{\frac{x}{2}}}{2} \end{pmatrix} \quad x=0 \Rightarrow \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = 2 \neq 0
+\]
+
 \subsection{4.1.29}
+All of the functions satisfy the differential equation.
+\[
+    W(x,x^{-2},x^{-2}\ln x)=\begin{pmatrix}x&x^{-2}&x^{-2}\ln x\\1&-2x^{-3}&\frac{-2 \ln (x) +1}{x^3}\\0 & 6x^{-4} & -\frac{-6 \ln (x)+5}{x^4}\end{pmatrix} \quad x=1 \Rightarrow \begin{pmatrix}1&1&0\\1&-2&1\\0 & 6 & -5\end{pmatrix}=9 \neq 0
+\]
+
 \subsection{4.1.35}
 \subsection{4.1.38}
 \subsection{4.1.40}
