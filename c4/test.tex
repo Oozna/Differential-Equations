@@ -109,8 +109,16 @@ All of the functions satisfy the differential equation.
 \]
 
 \subsection{4.1.35}
-\subsection{4.1.38}
-\subsection{4.1.40}
+(a)
+\begin{align*}
+    LHS=12e^{2x}-6\cdot6e^{2x}+5\cdot3e^{2x}  &= e^{2x}(12-36+15)=-9e^{2x}=RHS\\\\
+    LHS=2-6(2x+3)+5(x^2+3x) &= 5x^2+15x-12x+2-18=5x^2+3x-16=RHS 
+\end{align*}
+(b)
+\begin{align*}
+    y_{p_1}+y_{p_2} &= 5x^2+3x-16-3e^{2x}\\\\
+    -\frac{y_{p_1}}{9}-2y_{p_2} &= -2x^2-6x-\frac{e^{2x}}{3}
+\end{align*}
 
     
 \subsection{Chapter 4.2 -- Reduction of Order}
@@ -171,12 +179,74 @@ All of the functions satisfy the differential equation.
 \subsection{Chapter 4.6 -- Variation of Parameters}
 
 \subsection{4.6.1}
+\begin{align*}
+    y''+y &= \sec x\\
+    m^2+1 &= 0 \Rightarrow m = \pm i\\
+    y_c &= c_1\cos x+c_2\sin x\\\\
+    W(\cos x,\sin x)  &= \begin{vmatrix}\cos x & \sin x \\ -\sin x & \cos x \end{vmatrix} = \cos ^2+\sin ^2 = 1\\
+    W_1 &= \begin{vmatrix} 0 & \sin x \\ \sec x & \cos x\end{vmatrix} = -\sin x \sec x = -\tan x\\
+    W_2 &= \begin{vmatrix} \cos x & 0\\ -\sin x & \sec x\end{vmatrix} = \cos x \sec x = 1\\
+    u_1' &= \frac{W_1}{W}= \frac{-\tan x}{1} \Rightarrow u_1 =  \ln\left|\cos x\right|\\
+    u_2' &= \frac{W_2}{W}= \frac{1}{1} \Rightarrow u_2 = x\\
+    y_p &= \cos x\ln\left|\cos x\right|+x\sin x\\\\
+    y  = y_c+y_p&= c_1\cos x+c_2\sin x+\cos x \ln\left|\cos x\right|+x\sin x
+\end{align*}
+
 
 
 \subsection{4.6.6}
+\begin{align*}
+    y''+y &= \sec^2x\\
+    y_c &= c_1\cos x+c_2\sin x\\\\
+    W(\cos x,\sin x)  &= \begin{vmatrix}\cos x & \sin x \\ -\sin x & \cos x \end{vmatrix} = \cos ^2+\sin ^2 = 1\\
+    W_1 &= \begin{vmatrix} 0 & \sin x \\ \sec^2 x & \cos x\end{vmatrix} = -\sin x \sec^2x  =- \tan x \sec x\\
+    W_2 &= \begin{vmatrix} \cos x & 0\\ -\sin x & \sec^2 x\end{vmatrix} = \cos x\sec^2x = \sec x\\
+    u_1' &= \frac{W_1}{W} = \frac{-\tan x \sec x}{1} =  -\tan x\sec  x \Rightarrow u_1 =-\sec x\\
+    u_2' &= \frac{W_2}{W} = \frac{\sec x }{1}  = \sec x \Rightarrow u_2  = \ln\left|\sec x + \tan x\right|\\
+    y_p &= -\sec x \cos x + \ln\left|\sec x + \tan x\right| = -1+\ln\left|\sec x + \tan x\right|\\\\
+    y &= y_c+y_p =  c_1\cos x+c_2\sin x  -1+\ln\left|\sec x + \tan x\right|\sin x
+\end{align*}
+
 \subsection{4.6.11}
+\begin{align*}
+    y''+3y'+2y &= \frac{1}{1+e^{x}}\\
+    y_c &= c_1e^{-x}+c_2e^{-2x}\\\\
+    W(e^{x},e^{2x}) &=  \begin{vmatrix}e^{-x} & e^{-2x}\\ e^{-x}& -2e^{-2x}\end{vmatrix} = -2e^{-3x}+e^{-3x}  = -e^{-3x}\\
+    W_1 &= \begin{vmatrix} 0 & e^{-2x}\\ \frac{1}{1+e^{x}}  &-2e^{-2x}\end{vmatrix} = \frac{e^{-2x}}{1+e^{x}}     \\
+    W_2 &= \begin{vmatrix} e^{-x} & 0\\ e^{-x} & \frac{1}{1+e^{x}} \end{vmatrix} = \frac{e^{-x}}{1+e^{x}}\\  
+    u_1' &= \frac{W_1}{W}  = \frac{\frac{e^{-2x}}{1+e^{x}}}{e^{-3x}} =  \frac{e^{x}}{1+e^{x}}  \Rightarrow u_1  = \ln\left(1+e^{x}\right)     \\
+    u_2' &= \frac{W_1}{W}  = \frac{\frac{e^{-x}}{1+e^{x}}}{e^{-3x}} = \frac{e^{2x}}{1+e^{x}}\Rightarrow u_2 = \ln\left(1+e^{x}\right)-1-e^{x}\\
+    y_p  &= e^{-x}\ln\left(1+e^{x}\right)-e^{-x}-e^{-2x}+e^{-2x}\ln\left(1+e^{x}\right) \\
+(\text{Ignore \( e^{-x} \) and \( e^{-2x} \)}&\text{ when adding to solution because they are already present in \( y_c \) }) \\\\
+    y &= y_c+y_p = c_1e^{-x}+c_2e^{-2x}+ e^{-x}\ln\left(1+e^{x}\right)+e^{-2x}\ln\left(1+e^{x}\right)
+\end{align*}
+
 \subsection{4.6.27}
+\begin{align*}
+    x^2y''+xy'+\left(x^2-\frac{1}{4}\right)y &= x^{\frac{3}{2}}\\
+    y_1 = x^{-\frac{1}{2}}\cos x, & \quad y_2 = x^{-\frac{1}{2}}\sin x\\
+    W(x^{-\frac{1}{2}}\cos x, x^{-\frac{1}{2}}\sin x)  &= \begin{vmatrix} x^{-\frac{1}{2}}\cos x& x^{-\frac{1}{2}}\sin x \\-\frac{1}{2}x^{-\frac{3}{2}}\cos x-x^{-\frac{1}{2}}\sin x &-\frac{1}{2}x^{-\frac{3}{2}}\sin  x+x^{-\frac{1}{2}}\cos  x   \end{vmatrix} = \frac{1}{x}\\
+    W_1 &= \begin{vmatrix}0 & x^{-\frac{1}{2}}\sin x \\ x^{-\frac{1}{2}} & -\frac{1}{2}x^{-\frac{3}{2}}\sin  x+x^{-\frac{1}{2}}\cos  x  \end{vmatrix}  = -\frac{\sin x}{x}\\
+    W_2 &= \begin{vmatrix} x^{-\frac{1}{2}}\cos x& 0 \\-\frac{1}{2}x^{-\frac{3}{2}}\cos x-x^{-\frac{1}{2}}\sin x  & x^{-\frac{1}{2}}\end{vmatrix} = \frac{\cos x}{x}\\
+    u_1' &= \frac{W_1}{W} = -\sin x \Rightarrow u_1=\cos x\\
+    u_2' &= \frac{W_2}{W} = \cos x  \Rightarrow u_2=\sin x\\
+    y_p &= x^{-\frac{1}{2}}\cos ^2x+x^{-\frac{1}{2}}\sin ^2x=\frac{1}{\sqrt{x}}(\cos ^2x+\sin ^2x)= \frac{1}{\sqrt{x}}\\
+    y &= y_c+y_p=c_1x^{-\frac{1}{2}}\cos x+c_2x^{-\frac{1}{2}}\sin x+\frac{1}{\sqrt{x}}
+\end{align*}
+
+
 \subsection{4.6.28}
+\begin{align*}
+    x^2y''+xy'+y &= \sec (\ln x)\\
+    y''+\frac{y'}{x}+\frac{y}{x^2} &= \frac{\sec (\ln x)}{x^2}\\
+    W(\cos (\ln x), \sin (\ln x))  &= \begin{vmatrix}\cos (\ln x) &\sin (\ln x) \\ \frac{-\sin (\ln x)}{x} & \frac{\cos (\ln x)}{x} \end{vmatrix}=\frac{\cos ^2(\ln x)}{x}+\frac{\sin^2(\ln x)}{x}=\frac{1}{x}\\
+    W_1 &= \begin{vmatrix} 0 & \sin (\ln x) \\ \frac{\sec (\ln x)}{x^2}&\frac{\cos  (\ln x)}{x} \end{vmatrix} = -\frac{\tan (\ln x)}{x^2}\\
+    W_2 &= \begin{vmatrix}\cos (\ln x) & 0 \\ \frac{-\sin (\ln x)}{x}  &\frac{\sec (\ln x)}{x^2} \end{vmatrix} = \frac{1}{x^2}\\
+    u_1'  &= -\frac{\tan (\ln x)}{x}  \Rightarrow u_2 = \ln\left|\cos (\ln x)\right|\\
+    u_2' &= \frac{1}{x}  \Rightarrow u_1=\ln\left|x\right|\\
+    y_p &= \cos (\ln x)\ln\left|\cos (\ln x)\right|+\sin (\ln x)\ln\left|x\right|\\\\
+    y &= y_c+y_p=c_1\cos (\ln x)+c_2\sin (\ln x)+ \cos (\ln x)\ln\left|\cos (\ln x)\right|+\sin (\ln x)\ln\left|x\right|
+\end{align*}
 
 
 \end{document}
